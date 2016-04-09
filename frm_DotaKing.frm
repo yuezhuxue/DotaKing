@@ -1,26 +1,105 @@
 VERSION 5.00
 Object = "{6BF52A50-394A-11D3-B153-00C04F79FAA6}#1.0#0"; "wmp.dll"
 Begin VB.Form frm_DotaKing 
-   Caption         =   "ä¸­å›½åˆ€å¡”ç‹ - æ¨¡å¼è¾…åŠ©"
-   ClientHeight    =   7455
-   ClientLeft      =   7530
-   ClientTop       =   4710
-   ClientWidth     =   10395
+   BorderStyle     =   1  'Fixed Single
+   Caption         =   "ÖĞ¹úµ¶ËşÍõ - Ä£Ê½¸¨Öú"
+   ClientHeight    =   9765
+   ClientLeft      =   1470
+   ClientTop       =   3240
+   ClientWidth     =   13575
    Icon            =   "frm_DotaKing.frx":0000
    LinkTopic       =   "Form1"
-   ScaleHeight     =   7455
-   ScaleWidth      =   10395
+   MaxButton       =   0   'False
+   MinButton       =   0   'False
+   ScaleHeight     =   9765
+   ScaleWidth      =   13575
+   StartUpPosition =   2  'ÆÁÄ»ÖĞĞÄ
+   Begin VB.Timer Timer2 
+      Enabled         =   0   'False
+      Interval        =   1000
+      Left            =   720
+      Top             =   9240
+   End
+   Begin VB.CommandButton cmdhero 
+      Caption         =   "Ëæ»úÒ»¸öÓ¢ĞÛ°É"
+      BeginProperty Font 
+         Name            =   "ËÎÌå"
+         Size            =   15.75
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   855
+      Left            =   6000
+      TabIndex        =   28
+      Top             =   6720
+      Width           =   2535
+   End
+   Begin VB.Frame Frame2 
+      Caption         =   "Ä£Ê½ÍÆ¼ö"
+      Height          =   615
+      Left            =   600
+      TabIndex        =   23
+      Top             =   120
+      Width           =   6255
+      Begin VB.OptionButton Option3 
+         Caption         =   "ËÀÍöËæ»ú"
+         Height          =   255
+         Left            =   4320
+         TabIndex        =   26
+         Top             =   240
+         Width           =   1095
+      End
+      Begin VB.OptionButton Option2 
+         Caption         =   "ÖĞÂ·ÏàÍ¬Ó¢ĞÛ5v5"
+         Height          =   255
+         Left            =   2280
+         TabIndex        =   25
+         Top             =   240
+         Width           =   1695
+      End
+      Begin VB.OptionButton Option1 
+         Caption         =   "×Ô¶¨Òå"
+         Height          =   255
+         Left            =   360
+         TabIndex        =   24
+         Top             =   240
+         Value           =   -1  'True
+         Width           =   1095
+      End
+   End
+   Begin VB.CheckBox dm 
+      Caption         =   "dm£ºËÀÍöÄ£Ê½"
+      Height          =   255
+      Left            =   600
+      TabIndex        =   22
+      ToolTipText     =   "ËÀÍöºó»»Ó¢ĞÛ"
+      Top             =   5400
+      Width           =   1935
+   End
+   Begin VB.CheckBox ar 
+      Caption         =   "ar£ºËæ»úÓ¢ĞÛ"
+      ForeColor       =   &H000000FF&
+      Height          =   255
+      Left            =   600
+      TabIndex        =   21
+      ToolTipText     =   "Ëæ»úÓ¢ĞÛ"
+      Top             =   4800
+      Width           =   1935
+   End
    Begin VB.Frame Frame1 
-      Caption         =   "ç¨‹åºç‰ˆæœ¬v1.0"
+      Caption         =   "³ÌĞò°æ±¾v1.1"
       Height          =   1695
-      Left            =   6720
+      Left            =   9960
       TabIndex        =   17
-      Top             =   5640
+      Top             =   7920
       Width           =   3495
       Begin VB.Label Label5 
          AutoSize        =   -1  'True
-         Caption         =   "æœ¬è½¯ä»¶å¼€æºé¡¹ç›®åœ°å€"
-         Height          =   225
+         Caption         =   "±¾Èí¼ş¿ªÔ´ÏîÄ¿µØÖ·"
+         Height          =   180
          Left            =   600
          TabIndex        =   20
          Top             =   1320
@@ -28,7 +107,7 @@ Begin VB.Form frm_DotaKing
       End
       Begin VB.Label Label4 
          AutoSize        =   -1  'True
-         Caption         =   "ä¸­å›½åˆ€å¡”ç‹çš„QQç¾¤532519139"
+         Caption         =   "ÖĞ¹úµ¶ËşÍõµÄQQÈº532519139"
          Height          =   180
          Left            =   600
          TabIndex        =   19
@@ -37,7 +116,7 @@ Begin VB.Form frm_DotaKing
       End
       Begin VB.Label Label3 
          AutoSize        =   -1  'True
-         Caption         =   "ä¸­å›½åˆ€å¡”ç‹ç†ŠçŒ«tvç›´æ’­é—´"
+         Caption         =   "ÖĞ¹úµ¶ËşÍõĞÜÃ¨tvÖ±²¥¼ä"
          Height          =   180
          Left            =   600
          TabIndex        =   18
@@ -46,27 +125,28 @@ Begin VB.Form frm_DotaKing
       End
    End
    Begin VB.CheckBox id 
-      Caption         =   "idï¼šæ­»äº¡æ‰ç‰©å“ä¸æ‰é’±"
+      Caption         =   "id£ºËÀÍöµôÎïÆ·²»µôÇ®"
       Height          =   255
       Left            =   7320
       TabIndex        =   16
-      ToolTipText     =   "å¦‚æœéšæœºçš„é‚£ä¸ªæ ¼å­æœ‰ç‰©å“çš„è¯"
-      Top             =   2520
+      ToolTipText     =   "Èç¹ûËæ»úµÄÄÇ¸ö¸ñ×ÓÓĞÎïÆ·µÄ»°"
+      Top             =   3000
       Width           =   2175
    End
    Begin VB.CommandButton Command2 
-      Caption         =   "ç‚¹å‡»æ’­æ”¾åˆ€å¡”ç‹æˆ˜æ­Œ"
+      Caption         =   "µã»÷²¥·Åµ¶ËşÍõÕ½¸è"
       Height          =   615
-      Left            =   840
+      Left            =   3480
       TabIndex        =   14
-      ToolTipText     =   "ä»»æ„mp3æ–‡ä»¶æ”¹åä¸º1.mp3ä¸¢åˆ°ç¨‹åºç›®å½•"
-      Top             =   4680
+      ToolTipText     =   "ÈÎÒâmp3ÎÄ¼ş¸ÄÃûÎª1.mp3¶ªµ½³ÌĞòÄ¿Â¼"
+      Top             =   9000
+      Visible         =   0   'False
       Width           =   2175
    End
    Begin VB.CommandButton Command1 
-      Caption         =   "ç‚¹å‡»å¤åˆ¶å·¦è¾¹æ–‡å­—"
+      Caption         =   "µã»÷¸´ÖÆ×ó±ßÎÄ×Ö"
       BeginProperty Font 
-         Name            =   "å®‹ä½“"
+         Name            =   "ËÎÌå"
          Size            =   10.5
          Charset         =   134
          Weight          =   400
@@ -74,24 +154,24 @@ Begin VB.Form frm_DotaKing
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   735
-      Left            =   6720
+      Height          =   855
+      Left            =   7440
       TabIndex        =   12
-      Top             =   480
-      Width           =   2055
+      Top             =   1200
+      Width           =   2175
    End
    Begin VB.CheckBox mi 
-      Caption         =   "miï¼šè‹±é›„æ¨¡å‹ç¼©å°ä¸€åŠ"
+      Caption         =   "mi£ºÓ¢ĞÛÄ£ĞÍËõĞ¡Ò»°ë"
       Height          =   255
       Left            =   7320
       TabIndex        =   10
-      ToolTipText     =   "è‹±é›„æ¨¡å‹ç¼©å°ä¸€åŠ"
-      Top             =   1800
+      ToolTipText     =   "Ó¢ĞÛÄ£ĞÍËõĞ¡Ò»°ë"
+      Top             =   2280
       Width           =   2175
    End
    Begin VB.TextBox Text1 
       BeginProperty Font 
-         Name            =   "å®‹ä½“"
+         Name            =   "ËÎÌå"
          Size            =   24
          Charset         =   134
          Weight          =   400
@@ -100,116 +180,140 @@ Begin VB.Form frm_DotaKing
          Strikethrough   =   0   'False
       EndProperty
       Height          =   855
-      Left            =   120
+      Left            =   600
+      Locked          =   -1  'True
       TabIndex        =   9
-      Top             =   480
+      Top             =   1200
       Width           =   6495
    End
    Begin VB.CheckBox sp 
-      Caption         =   "spï¼šéšæœºäº¤æ¢ä½ç½®"
+      Caption         =   "sp£ºËæ»ú½»»»Î»ÖÃ"
       Height          =   255
       Left            =   600
       TabIndex        =   8
-      ToolTipText     =   "éšæœºäº¤æ¢ä½ç½®"
-      Top             =   2520
+      ToolTipText     =   "Ëæ»ú½»»»Î»ÖÃ"
+      Top             =   3000
       Value           =   1  'Checked
       Width           =   1935
    End
    Begin VB.CheckBox om 
-      Caption         =   "omï¼šåªæœ‰ä¸­è·¯å‡ºå…µ"
+      Caption         =   "om£ºÖ»ÓĞÖĞÂ·³ö±ø"
       Height          =   255
       Left            =   600
       TabIndex        =   7
-      ToolTipText     =   "åªæœ‰ä¸­è·¯å‡ºå…µ"
-      Top             =   3240
+      ToolTipText     =   "Ö»ÓĞÖĞÂ·³ö±ø"
+      Top             =   3720
       Value           =   1  'Checked
       Width           =   2055
    End
    Begin VB.CheckBox em 
-      Caption         =   "emï¼šç»éªŒé‡‘é’±æ›´å¤š"
+      Caption         =   "em£º¾­Ñé½ğÇ®¸ü¶à"
       Height          =   255
       Left            =   2880
       TabIndex        =   6
-      ToolTipText     =   "ç»éªŒé‡‘é’±æ›´å¤š"
-      Top             =   1800
+      ToolTipText     =   "¾­Ñé½ğÇ®¸ü¶à"
+      Top             =   2280
       Value           =   1  'Checked
       Width           =   1935
    End
    Begin VB.CheckBox sh 
-      Caption         =   "shï¼šç›¸åŒè‹±é›„"
+      Caption         =   "sh£ºÏàÍ¬Ó¢ĞÛ"
       Height          =   255
       Left            =   2880
       TabIndex        =   5
-      ToolTipText     =   "ç›¸åŒè‹±é›„"
-      Top             =   2520
+      ToolTipText     =   "ÏàÍ¬Ó¢ĞÛ"
+      Top             =   3000
       Value           =   1  'Checked
       Width           =   1575
    End
    Begin VB.CheckBox np 
-      Caption         =   "npï¼šç¦æ­¢ç¥ç¬¦ç”Ÿæˆ"
+      Caption         =   "np£º½ûÖ¹Éñ·ûÉú³É"
       Height          =   255
       Left            =   2880
       TabIndex        =   4
-      ToolTipText     =   "ç¦æ­¢ç¥ç¬¦ç”Ÿæˆ"
-      Top             =   3240
+      ToolTipText     =   "½ûÖ¹Éñ·ûÉú³É"
+      Top             =   3720
       Value           =   1  'Checked
       Width           =   1935
    End
    Begin VB.CheckBox pm 
-      Caption         =   "pmï¼šç‰©å“ä»–äººæ‹¿äº†æœ‰æ•ˆ"
+      Caption         =   "pm£ºÎïÆ·ËûÈËÄÃÁËÓĞĞ§"
       Height          =   255
       Left            =   4920
       TabIndex        =   3
-      ToolTipText     =   "ç‰©å“ä»–äººæ‹¿äº†æœ‰æ•ˆ"
-      Top             =   1800
+      ToolTipText     =   "ÎïÆ·ËûÈËÄÃÁËÓĞĞ§"
+      Top             =   2280
       Width           =   2295
    End
    Begin VB.CheckBox sc 
-      Caption         =   "scï¼šä¼šå‡ºç²¾è‹±å°å…µ"
+      Caption         =   "sc£º»á³ö¾«Ó¢Ğ¡±ø"
       Height          =   255
       Left            =   4920
       TabIndex        =   2
-      ToolTipText     =   "ä¼šå‡ºç²¾è‹±å°å…µ"
-      Top             =   2520
+      ToolTipText     =   "»á³ö¾«Ó¢Ğ¡±ø"
+      Top             =   3000
       Width           =   1815
    End
    Begin VB.CheckBox fr 
-      Caption         =   "frï¼šå¤æ´»æ—¶é—´å‡åŠ"
+      Caption         =   "fr£º¸´»îÊ±¼ä¼õ°ë"
       Height          =   255
       Left            =   4920
       TabIndex        =   1
-      ToolTipText     =   "å¤æ´»æ—¶é—´å‡åŠ"
-      Top             =   3240
+      ToolTipText     =   "¸´»îÊ±¼ä¼õ°ë"
+      Top             =   3720
       Width           =   1935
    End
    Begin VB.Timer Timer1 
-      Interval        =   1000
-      Left            =   0
-      Top             =   6960
+      Enabled         =   0   'False
+      Interval        =   50
+      Left            =   120
+      Top             =   9240
    End
    Begin VB.CheckBox ap 
-      Caption         =   "apï¼šå…¨é˜µè¥é€‰æ‹©"
+      Caption         =   "ap£ºÈ«ÕóÓªÑ¡Ôñ"
+      ForeColor       =   &H000000FF&
       Height          =   255
       Left            =   600
       TabIndex        =   0
-      ToolTipText     =   "å…¨é˜µè¥é€‰æ‹©"
-      Top             =   1800
+      ToolTipText     =   "È«ÕóÓªÑ¡Ôñ"
+      Top             =   2280
       Value           =   1  'Checked
       Width           =   1935
    End
+   Begin VB.Label lblhero 
+      AutoSize        =   -1  'True
+      Caption         =   "ÖĞÂ·Ëæ»ú"
+      BeginProperty Font 
+         Name            =   "ËÎÌå"
+         Size            =   42
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   840
+      Left            =   720
+      TabIndex        =   27
+      Top             =   6720
+      Width           =   3360
+   End
    Begin VB.Label Label2 
-      Caption         =   "æ¨¡å¼è¾“å…¥å2-15ç§’å†…è¾“å…¥-noneutralsç¦æ­¢åˆ·æ–°é‡æ€ª"
-      Height          =   255
+      AutoSize        =   -1  'True
+      Caption         =   "Ä£Ê½ÊäÈëºó2-15ÃëÄÚÊäÈë-noneutrals½ûÖ¹Ë¢ĞÂÒ°¹Ö"
+      ForeColor       =   &H00FF0000&
+      Height          =   180
       Left            =   600
       TabIndex        =   15
-      Top             =   3960
-      Width           =   4575
+      Top             =   4320
+      Width           =   4050
    End
    Begin WMPLibCtl.WindowsMediaPlayer WMP 
       Height          =   1095
-      Left            =   840
+      Left            =   6000
       TabIndex        =   13
-      Top             =   5520
+      Top             =   8640
+      Visible         =   0   'False
       Width           =   3495
       URL             =   ""
       rate            =   1
@@ -238,9 +342,9 @@ Begin VB.Form frm_DotaKing
       _cy             =   1931
    End
    Begin VB.Label Label1 
-      Caption         =   "æŒ‰Ctrl+Cå¤åˆ¶ä»¥ä¸‹æ–‡å­—,é¢œè‰²å˜åŒ–åˆ™å¤åˆ¶æˆåŠŸ"
+      Caption         =   "°´Ctrl+C¸´ÖÆÒÔÏÂÎÄ×Ö,ÑÕÉ«±ä»¯Ôò¸´ÖÆ³É¹¦"
       BeginProperty Font 
-         Name            =   "å®‹ä½“"
+         Name            =   "ËÎÌå"
          Size            =   10.5
          Charset         =   134
          Weight          =   400
@@ -249,9 +353,9 @@ Begin VB.Form frm_DotaKing
          Strikethrough   =   0   'False
       EndProperty
       Height          =   255
-      Left            =   240
+      Left            =   600
       TabIndex        =   11
-      Top             =   120
+      Top             =   840
       Width           =   4455
    End
 End
@@ -261,15 +365,20 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
-'å•å‡»æ‰“å¼€ç½‘é¡µå£°æ˜
+'µ¥»÷´ò¿ªÍøÒ³ÉùÃ÷
 Private Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA" (ByVal hwnd As Long, ByVal lpOperation As String, ByVal lpFile As String, ByVal lpParameters As String, ByVal lpDirectory As String, ByVal nShowCmd As Long) As Long
 
 
 Private WithEvents hk As clsRegHotKeys
 Attribute hk.VB_VarHelpID = -1
-Dim FrTxt(1 To 11) As String
+Dim FrTxt(1 To 13) As String
 Dim a, b, c, i As Integer
 Public Grtxt As String
+Public I_second As Integer
+Dim StrHero() As String
+Public StrCount As Integer
+
+
 
 
 
@@ -281,12 +390,19 @@ b = Int(Rnd * 256)
 c = Int(Rnd * 256)
 Text1.ForeColor = RGB(a, b, c)
 End Sub
-'æ’­æ”¾éŸ³ä¹
+'²¥·ÅÒôÀÖ
 Private Sub Command2_Click()
-WMP.URL = App.Path & "\1.mp3" ' æ­Œæ›²çš„è·¯å¾„\
+If Dir(App.Path & "\1.mp3") <> "" Then
+WMP.URL = App.Path & "\1.mp3" ' ¸èÇúµÄÂ·¾¶\
 'Print App.Path & "1.mp3"
 WMP.settings.volume = 100
+Else
+MsgBox "´íÎó£º³ÌĞòÄ¿Â¼²»´æÔÚ1.mp3"
+Exit Sub
+End If
 End Sub
+
+
 
 Private Sub Form_Click()
 'Print Grtxt
@@ -304,17 +420,19 @@ FrTxt(8) = ""
 FrTxt(9) = ""
 FrTxt(10) = ""
 FrTxt(11) = ""
+FrTxt(12) = ""
+FrTxt(13) = ""
 Grtxt = "-"
-For i = 1 To 11
+For i = 1 To 13
 Grtxt = Grtxt + FrTxt(i)
 Next
 Text1.Text = Grtxt
-Timer1.Enabled = True
+'Timer1.Enabled = True
 
           Set hk = New clsRegHotKeys
           hk.RegHotKeys Me.hwnd, ctrlKey, vbKeyC, "C"
           hk.RegHotKeys Me.hwnd, ctrlKey, vbKeyD, "D"
-          Me.Show   'è¿™ä¸ªä¸èƒ½çœç•¥ï¼Œå¦åˆ™çª—ä½“æ— æ³•æ˜¾ç¤ºå‡ºæ¥ï¼
+          Me.Show   'Õâ¸ö²»ÄÜÊ¡ÂÔ£¬·ñÔò´°ÌåÎŞ·¨ÏÔÊ¾³öÀ´£¡
             
           hk.WaitMsg
     
@@ -330,11 +448,11 @@ End Sub
   Private Sub hk_HotKeysDown(Key As String)
           Select Case Key
                   'Case "C"
-                  '        MsgBox "ä½ æŒ‰äº†Ctrl+C   !"
+                  '        MsgBox "Äã°´ÁËCtrl+C   !"
                   Case "C"
                           
                           
-                          'å¿…é¡»è¦æœ‰Clearï¼Œä¸ç„¶æ— æ³•å¤åˆ¶
+                          '±ØĞëÒªÓĞClear£¬²»È»ÎŞ·¨¸´ÖÆ
                           Clipboard.Clear
                           Clipboard.SetText Grtxt
 a = Int(Rnd * 256)
@@ -342,21 +460,95 @@ b = Int(Rnd * 256)
 c = Int(Rnd * 256)
 Text1.ForeColor = RGB(a, b, c)
 
-                        'MsgBox "æ–‡æœ¬è¾“å…¥æˆåŠŸ"
+                        'MsgBox "ÎÄ±¾ÊäÈë³É¹¦"
           End Select
   End Sub
   
+
+
+
+Private Sub Option2_Click()
+ap.Value = 1
+sp.Value = 1
+om.Value = 1
+em.Value = 1
+sh.Value = 1
+np.Value = 1
+pm.Value = 0
+sc.Value = 1
+fr.Value = 0
+mi.Value = 0
+ID.Value = 0
+ar.Value = 0
+dm.Value = 0
+FrTxt(1) = "ap"
+FrTxt(2) = "sp"
+FrTxt(3) = "om"
+FrTxt(4) = "em"
+FrTxt(5) = "sh"
+FrTxt(6) = "np"
+FrTxt(7) = ""
+FrTxt(8) = "sc"
+FrTxt(9) = ""
+FrTxt(10) = ""
+FrTxt(11) = ""
+FrTxt(12) = ""
+FrTxt(13) = ""
+Grtxt = "-"
+For i = 1 To 13
+Grtxt = Grtxt + FrTxt(i)
+Next
+Text1.Text = Grtxt
+End Sub
+
+Private Sub Option3_Click()
+ap.Value = 0
+sp.Value = 1
+om.Value = 1
+em.Value = 1
+sh.Value = 0
+np.Value = 1
+pm.Value = 0
+sc.Value = 1
+fr.Value = 0
+mi.Value = 0
+ID.Value = 0
+ar.Value = 1
+dm.Value = 1
+FrTxt(1) = ""
+FrTxt(2) = "sp"
+FrTxt(3) = "om"
+FrTxt(4) = "em"
+FrTxt(5) = ""
+FrTxt(6) = "np"
+FrTxt(7) = ""
+FrTxt(8) = "sc"
+FrTxt(9) = ""
+FrTxt(10) = ""
+FrTxt(11) = ""
+FrTxt(12) = "ar"
+FrTxt(13) = "dm"
+Grtxt = "-"
+For i = 1 To 13
+Grtxt = Grtxt + FrTxt(i)
+Next
+Text1.Text = Grtxt
+End Sub
 Private Sub ap_Click()
 If ap.Value = 1 Then
     FrTxt(1) = "ap"
     Call CheckString
+    ar.Enabled = False
+    ar.Value = 0
+    Label2.Caption = "Ä£Ê½ÊäÈëºó2-15ÃëÄÚÊäÈë-noneutrals½ûÖ¹Ë¢ĞÂÒ°¹Ö"
 Else
     FrTxt(1) = ""
     Call CheckString
+    ar.Enabled = True
+    ar.Value = 1
+    Label2.Caption = "Ä£Ê½ÊäÈëºó2-15ÃëÄÚÊäÈë-ndÈ¡Ïû¸´»îµÈ´ıÊ±¼ä£¬ÊäÈë-lives #ÉèÖÃËÀÍöÊı"
 End If
 End Sub
-
-
 Private Sub sp_Click()
 If sp.Value = 1 Then
     FrTxt(2) = "sp"
@@ -438,8 +630,8 @@ Else
     Call CheckString
 End If
 End Sub
- Private Sub id_Click()
-If id.Value = 1 Then
+Private Sub id_Click()
+If ID.Value = 1 Then
     FrTxt(11) = "id"
     Call CheckString
 Else
@@ -447,27 +639,101 @@ Else
     Call CheckString
 End If
 End Sub
-
-
+Private Sub ar_Click()
+If ar.Value = 1 Then
+    FrTxt(12) = "ar"
+    Call CheckString
+    ap.Enabled = False
+    ap.Value = 0
+    sh.Enabled = False
+    sh.Value = 0
+    Label2.Caption = "Ä£Ê½ÊäÈëºó2-15ÃëÄÚÊäÈë-ndÈ¡Ïû¸´»îµÈ´ıÊ±¼ä£¬ÊäÈë-lives #ÉèÖÃËÀÍöÊı"
+Else
+    FrTxt(12) = ""
+    Call CheckString
+    ap.Enabled = True
+    ap.Value = 1
+    sh.Enabled = True
+    sh.Value = 1
+    Label2.Caption = "Ä£Ê½ÊäÈëºó2-15ÃëÄÚÊäÈë-noneutrals½ûÖ¹Ë¢ĞÂÒ°¹Ö"
+End If
+End Sub
+Private Sub dm_Click()
+If dm.Value = 1 Then
+    FrTxt(13) = "dm"
+    Call CheckString
+    sh.Value = 0
+    sh.Enabled = False
+Else
+    FrTxt(13) = ""
+    Call CheckString
+    sh.Value = 1
+    sh.Enabled = True
+End If
+End Sub
 Private Sub CheckString()
 Grtxt = "-"
-For i = 1 To 11
+For i = 1 To 13
 Grtxt = Grtxt + FrTxt(i)
 Next
 Text1.Text = Grtxt
-If Grtxt = "-apspomemshnppmscfrmiid" Then
-    MsgBox "DotAæœ€å¤šæ”¯æŒ10ä¸ªæ¨¡å¼ï¼Œè¯·å–æ¶ˆ1ä¸ªå‹¾é€‰"
-    id.Value = False
+If Len(Grtxt) >= 23 Then
+    MsgBox "DotA×î¶àÖ§³Ö10¸öÄ£Ê½£¬ÇëÈ¡Ïû1¸ö¹´Ñ¡"
+    ID.Value = False
     FrTxt(11) = ""
+    pm.Value = False
+    FrTxt(7) = ""
+    mi.Value = False
+    FrTxt(10) = ""
 End If
 End Sub
 
 
+Private Sub cmdhero_Click()
+cmdhero.Enabled = False
+cmdhero.Caption = "5Ãë"
+Timer1.Interval = "100"
+Dim i As Integer
+i = 0
+Timer1.Enabled = True
+Open App.Path & "\omhero.ini" For Input As #123
+Do While Not EOF(123)
+i = i + 1
+ReDim Preserve StrHero(i) 'Ã÷È·ÉÏ½ì£¬·ÀÖ¹ÏÂ±êÔ½½ç
+Line Input #123, StrHero(i)
+Loop
+StrCount = i
+I_second = 5
+Timer2.Enabled = True
+Close #123
+'Print StrHero(110)
+End Sub
+
+Private Sub Timer1_Timer()
+Randomize
+
+lblhero.Caption = StrHero(Int(Rnd * (StrCount + 1)))
+End Sub
+Private Sub Timer2_Timer()
+I_second = I_second - 1
+cmdhero.Caption = I_second & "Ãë"
+'If I_second = 4 Then Timer1.Interval = 100
+'If I_second = 3 Then Timer1.Interval = 150
+'If I_second = 2 Then Timer1.Interval = 200
+'If I_second = 1 Then Timer1.Interval = 250
 
 
 
 
-'è¶…é“¾æ¥
+If I_second = 0 Then
+Timer2.Enabled = False
+cmdhero.Caption = "Ëæ»úÒ»¸öÓ¢ĞÛ°É"
+Timer1.Enabled = False
+cmdhero.Enabled = True
+End If
+End Sub
+
+'³¬Á´½Ó
 Private Sub Label3_Click()
 ShellExecute Me.hwnd, "open", "http://www.panda.tv/33861", "", "", 1
 End Sub
@@ -475,7 +741,7 @@ Private Sub Label4_Click()
 ShellExecute Me.hwnd, "open", "http://qun.qzone.qq.com/group#!/532519139/home", "", "", 1
 End Sub
 Private Sub Label5_Click()
-ShellExecute Me.hwnd, "open", "https://github.com/yuezhuxue/DotaKing", "", "", 1
+ShellExecute Me.hwnd, "open", "https://github.com/yuezhuxue/DotaKing/releases", "", "", 1
 End Sub
 Private Sub Label3_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
 Label3.FontUnderline = True
@@ -490,7 +756,7 @@ Label5.FontUnderline = True
 Label5.ForeColor = vbRed
 End Sub
 
-'è¶…é“¾æ¥é¢œè‰²æ¢å¤
+'³¬Á´½ÓÑÕÉ«»Ö¸´
 Private Sub Form_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
 Label3.FontUnderline = False
 Label3.ForeColor = vbBlue
@@ -507,4 +773,6 @@ Label4.ForeColor = vbBlue
 Label5.FontUnderline = False
 Label5.ForeColor = vbBlue
 End Sub
+
+
 

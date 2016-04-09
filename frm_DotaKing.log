@@ -1,25 +1,2 @@
-行 154: 控件 WMP 的类 WMPLibCtl.WindowsMediaPlayer 不是一个已加载的控件类。
-行 160: 属性名 URL 在 WMP 中是无效的。
-行 161: 属性名 rate 在 WMP 中是无效的。
-行 162: 属性名 balance 在 WMP 中是无效的。
-行 163: 属性名 currentPosition 在 WMP 中是无效的。
-行 164: 属性名 defaultFrame 在 WMP 中是无效的。
-行 165: 属性名 playCount 在 WMP 中是无效的。
-行 166: 属性名 autoStart 在 WMP 中是无效的。
-行 167: 属性名 currentMarker 在 WMP 中是无效的。
-行 168: 属性名 invokeURLs 在 WMP 中是无效的。
-行 169: 属性名 baseURL 在 WMP 中是无效的。
-行 170: 属性名 volume 在 WMP 中是无效的。
-行 171: 属性名 mute 在 WMP 中是无效的。
-行 172: 属性名 uiMode 在 WMP 中是无效的。
-行 173: 属性名 stretchToFit 在 WMP 中是无效的。
-行 174: 属性名 windowlessVideo 在 WMP 中是无效的。
-行 176: 属性名 enableContextMenu 在 WMP 中是无效的。
-行 177: 属性名 fullScreen 在 WMP 中是无效的。
-行 178: 属性名 SAMIStyle 在 WMP 中是无效的。
-行 179: 属性名 SAMILang 在 WMP 中是无效的。
-行 180: 属性名 SAMIFilename 在 WMP 中是无效的。
-行 181: 属性名 captioningID 在 WMP 中是无效的。
-行 182: 属性名 enableErrorDialogs 在 WMP 中是无效的。
-行 183: 属性名 _cx 在 WMP 中是无效的。
-行 184: 属性名 _cy 在 WMP 中是无效的。
+不能加载 '0'
+行 0: 不能加载文件 C:\刀塔王\DotaKing-1.0\frm_DotaKing.frm 。
